@@ -82,14 +82,36 @@ public class SolutionTest {
         final var manufacturer = new Manufacturer(manufacturerName, isLongTermWarranty);
         ElectricDevice electricDevice = new ElectricDevice(manufacturer,minWarranty);
 
-        Assertions.assertEquals(3, electricDevice.warranty());
+        Assertions.assertEquals(6, electricDevice.warranty());
 
         electricDevice = new Cooker(manufacturer, minWarranty, isGas);
 
-        Assertions.assertEquals(15, electricDevice.warranty());
+        Assertions.assertEquals(18, electricDevice.warranty());
 
         electricDevice = new WashingMachine(manufacturer, minWarranty, isDryer);
 
-        Assertions.assertEquals(4, electricDevice.warranty());
+        Assertions.assertEquals(9, electricDevice.warranty());
+    }
+
+    @Test
+    public void sample4() {
+        String manufacturerName = "ElDevMan";
+        boolean isLongTermWarranty = false;
+        int minWarranty = 3;
+        boolean isGas = false;
+        boolean isDryer = false;
+
+        final var manufacturer = new Manufacturer(manufacturerName, isLongTermWarranty);
+        ElectricDevice electricDevice = new ElectricDevice(manufacturer,minWarranty);
+
+        Assertions.assertEquals(6, electricDevice.warranty());
+
+        electricDevice = new Cooker(manufacturer, minWarranty, isGas);
+
+        Assertions.assertEquals(6, electricDevice.warranty());
+
+        electricDevice = new WashingMachine(manufacturer, minWarranty, isDryer);
+
+        Assertions.assertEquals(6, electricDevice.warranty());
     }
 }

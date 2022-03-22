@@ -20,7 +20,7 @@ class ElectricDevice {
 
     public ElectricDevice(Manufacturer manufacturer, int minWarranty) {
         this.manufacturer = manufacturer;
-        this.minWarranty = minWarranty;
+        this.minWarranty = Math.max(6, minWarranty);
     }
 
     public int warranty() {
